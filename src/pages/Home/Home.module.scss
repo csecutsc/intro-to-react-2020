@@ -1,0 +1,27 @@
+@use '../../styles/units';
+
+.heading {
+    color: var(--color-primary);
+    font-size: 4rem;
+}
+
+.list {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: map-get(units.$spacing, container);
+    padding: 0;
+    margin: 0;
+}
+
+.loader {
+    font-weight: bold;
+    font-size: 1.5rem;
+    animation: pulse 1s ease 0s infinite;
+    @keyframes pulse {
+        0% { opacity: 0.2; }
+        30% { opacity: 0.6; }
+        70% { opacity: 0.6; }
+        100% { opacity: 0.2; }
+    }
+}

@@ -1,0 +1,10 @@
+@use './colors';
+
+:global() {
+    @include colors.init();
+    body {
+        margin: 0;
+        background-color: var(--color-background);
+        font-family: 'Open Sans', sans-serif;
+    }
+}

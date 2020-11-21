@@ -1,0 +1,54 @@
+@use '../../styles/units';
+
+.button {
+    transition: background-color 150ms ease;
+    justify-content: center;
+    display: flex;
+    padding: map-get(units.$spacing, inputs) map-get(units.$spacing, inputs) * 2;
+    border-radius: map-get(units.$dimensions, radius);
+    font-weight: bold;
+    cursor: pointer;
+    align-items: center;
+    border: none;
+
+    &--primary {
+        background-color: var(--color-primary);
+        color: var(--color-background);
+
+        &:hover, &:focus {
+            background-color: var(--color-primary-hover);
+        }
+
+        &:active {
+            background-color: var(--color-primary-active);
+        }
+    }
+
+    &--secondary {
+        background-color: var(--color-background-alt);
+        color: var(--color-text);
+
+        &:hover, &:focus {
+            background-color: var(--color-background-alt-hover);
+        }
+
+        &:active {
+            background-color: var(--color-background-alt-active);
+        }
+    }
+    
+}
+
+
+.icon {
+    width: map-get(units.$dimensions, input-icon);
+    flex-shrink: 0;
+}
+
+.icon--left {
+    margin-right: map-get(units.$spacing, component) * 0.8;
+}
+
+.icon--right {
+    margin-left: map-get(units.$spacing, component) * 0.8;
+}

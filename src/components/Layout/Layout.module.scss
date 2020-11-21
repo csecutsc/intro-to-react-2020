@@ -1,0 +1,60 @@
+@use '../../styles/units';
+
+.container {
+    background-color: var(--color-background);
+    position: sticky;
+    top: 0;
+}
+
+.nav {
+    display: flex;
+    color: var(--color-primary);
+    align-items: center;
+}
+
+.logo {
+    display: inline-block;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+.menu {
+    display: inline-flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-right: -1 * map-get(units.$spacing, component);
+}
+
+.link {
+    transition: background-color 200ms ease, color 200ms ease;
+    padding: map-get(units.$spacing, component) map-get(units.$spacing, container);
+    margin-right: map-get(units.$spacing, component);
+    border-radius: map-get(units.$dimensions, radius);
+    background-color: transparent;
+    font-weight: bold;
+    color: var(--color-text);
+    text-decoration: none;
+    display: block;
+
+    &:hover, &:focus {
+        background-color: var(--color-background-hover);
+    }
+
+    &:active {
+        background-color: var(--color-background-active);
+    }
+}
+
+.link--active {
+    background-color: var(--color-background-hover);
+    color: var(--color-primary);
+
+    &:hover, &:focus {
+        background-color: var(--color-background-hover);
+    }
+
+    &:active {
+        background-color: var(--color-background-active);
+    }
+}

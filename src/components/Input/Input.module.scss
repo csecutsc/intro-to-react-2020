@@ -1,0 +1,31 @@
+@use '../../styles/units';
+
+.label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: map-get(units.$spacing, component);
+}
+
+.input {
+    border: none;
+    background-color: var(--color-background-hover);
+    padding: map-get(units.$spacing, inputs);
+    border-radius: map-get(units.$dimensions, radius);
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 0.75rem;
+    width: 100%;
+
+    &:focus, &:active {
+        background-color: var(--color-background-active);
+    }
+}
+
+.error {
+    color: var(--color-error);
+    font-size: 0.75rem;
+    font-weight: bold;
+}

@@ -1,0 +1,21 @@
+$colors: (
+    background: #FFFFFF,
+    background-alt: darken(#FFFFFF, 8%),
+    primary: #5863F8,
+    text: #171917,
+    error: #FF0033,
+);
+
+@mixin generate($color) {
+    --color-#{$color}: #{map-get($colors, $color)};
+    --color-#{$color}-hover: #{darken(map-get($colors, $color), 4%)};
+    --color-#{$color}-active: #{darken(map-get($colors, $color), 6%)};
+}
+
+@mixin init() {
+    :root {
+        @each $color, $_ in $colors {
+            @include generate($color);
+        }
+    }
+}
